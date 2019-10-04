@@ -21,8 +21,7 @@ import (
 )
 
 const (
-	appName   = "kube-state-metrics"
-	chartName = "kubernetes-kube-state-metrics"
+	appName = "kube-state-metrics"
 )
 
 const (
@@ -101,7 +100,7 @@ func init() {
 
 			App: basicapp.Chart{
 				ChartValues:     templates.KubeStateMetricsValues,
-				Name:            chartName,
+				Name:            appName,
 				Namespace:       metav1.NamespaceSystem,
 				RunReleaseTests: true,
 				URL:             tarballURL,
