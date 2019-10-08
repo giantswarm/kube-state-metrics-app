@@ -35,7 +35,7 @@ $ helm install kube-state-metrics-app -f values.yaml
 * Update [cluster-operator] with the new version.
 
 [app-operator]: https://github.com/giantswarm/app-operator
-[cluster-operator]: https://github.com/giantswarm/app-operator
+[cluster-operator]: https://github.com/giantswarm/cluster-operator
 [default-catalog]: https://github.com/giantswarm/default-catalog
 [default-test-catalog]: https://github.com/giantswarm/default-test-catalog
 [kube-state-metrics agent]: https://github.com/kubernetes/kube-state-metrics
