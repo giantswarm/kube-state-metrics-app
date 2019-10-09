@@ -38,7 +38,7 @@ spec:
           initialDelaySeconds: 5
           timeoutSeconds: 5
       - name: addon-resizer
-        image: "{{ .Values.imageResizer.registry }}/{{ .Values.imageResizer.repository }}:{{ .Values.imageResizer.tag }}"
+        image: "{{ .Values.image.registry }}/{{ .Values.imageResizer.repository }}:{{ .Values.imageResizer.tag }}"
         resources:
           limits:
             cpu: 150m

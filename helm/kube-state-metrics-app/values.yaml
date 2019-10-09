@@ -15,12 +15,10 @@ image:
   tag: v1.8.0
 
 imageResizer:
-  registry: quay.io
   repository: giantswarm/addon-resizer
   tag: 1.8.4
 
 test:
   image:
-    registry: quay.io
     repository: giantswarm/alpine-testing
     tag: 0.1.0
