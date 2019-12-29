@@ -67,12 +67,12 @@ func init() {
 	}
 
 	{
-		c := k8s.SetupConfig{
+		c := k8sclient.SetupConfig{
 			Logger: l,
 
 			Clients: k8sClients,
 		}
-		k8sSetup, err = k8s.NewSetup(c)
+		k8sSetup, err = k8sclient.NewSetup(c)
 		if err != nil {
 			panic(err.Error())
 		}
