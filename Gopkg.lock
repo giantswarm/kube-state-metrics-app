@@ -1392,8 +1392,8 @@
     "pkg/version",
   ]
   pruneopts = "UT"
-  revision = "190eafce4a149d58ed93c5ca2e546244da4837d4"
-  version = "v0.16.4"
+  revision = "6123e1c827f7a49a3686e31243181339da131c0c"
+  version = "kubernetes-1.16.3"
 
 [[projects]]
   digest = "1:6a90415bf4ce0c14b7d5e03e2d3d9602000a18fede0caf4465eb5ae999f90b98"
@@ -1429,8 +1429,8 @@
     "pkg/util/taints",
   ]
   pruneopts = "UT"
-  revision = "224be7bdce5a9dd0c2fd0d46b83865648e2fe0ba"
-  version = "v1.16.4"
+  revision = "b3cbbae08ec52a7fc73d334838e18d17e8512749"
+  version = "v1.16.3"
 
 [[projects]]
   branch = "master"
