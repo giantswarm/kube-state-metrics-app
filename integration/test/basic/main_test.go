@@ -142,12 +142,12 @@ func TestMain(m *testing.M) {
 			Setup:      k8sSetup,
 		}
 
-		_, err := e2esetup.Setup(ctx, m, c)
+		v, err := e2esetup.Setup(ctx, m, c)
 		if err != nil {
 			l.LogCtx(ctx, "level", "error", "message", "e2e test failed", "stack", fmt.Sprintf("%#v\n", err))
 			os.Exit(1)
 		}
-	}
 
-	os.Exit(m.Run())
+		os.Exit(v)
+	}
 }
