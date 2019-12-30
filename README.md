@@ -42,3 +42,4 @@ changelog entry.
 [default-catalog]: https://github.com/giantswarm/default-catalog
 [default-test-catalog]: https://github.com/giantswarm/default-test-catalog
 [kube-state-metrics agent]: https://github.com/kubernetes/kube-state-metrics
+
