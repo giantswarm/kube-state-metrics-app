@@ -9,7 +9,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 
-- Upgraded to kube-state-metrics [new release 1.9.2](https://github.com/kubernetes/kube-state-metrics/releases/tag/v1.9.2)
+- Upgrade to kube-state-metrics [1.9.2](https://github.com/kubernetes/kube-state-metrics/releases/tag/v1.9.2)
 - Upgrade to k8s 1.16 compatible addon-resizer release 1.8.7
 
 ## [v1.0.0]
