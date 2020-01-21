@@ -16,7 +16,7 @@ image:
 
 imageResizer:
   name: giantswarm/addon-resizer
-  tag: 1.8.4
+  tag: 1.8.7
 
 test:
   image:
