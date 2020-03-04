@@ -37,6 +37,10 @@ spec:
             port: {{ .Values.port }}
           initialDelaySeconds: 5
           timeoutSeconds: 5
+        resources:
+          requests:
+            cpu: 500m
+            memory: 500Mi
       serviceAccountName: {{ .Values.name }}
       securityContext:
         fsGroup: 65534
