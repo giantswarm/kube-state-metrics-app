@@ -5,8 +5,6 @@ orbs:
 workflows:
   build:
     jobs:
-      - build
-
       - architect/push-to-app-catalog:
           context: architect
           name: push-to-default-app-catalog
