@@ -115,17 +115,17 @@ func init() {
 			ChartResources: basicapp.ChartResources{
 				Deployments: []basicapp.Deployment{
 					{
-						Name:      appName,
+						Name:      app,
 						Namespace: metav1.NamespaceSystem,
 						DeploymentLabels: map[string]string{
-							"app":                        appName,
+							"app":                        app,
 							"giantswarm.io/service-type": "managed",
 						},
 						MatchLabels: map[string]string{
-							"app": appName,
+							"app": app,
 						},
 						PodLabels: map[string]string{
-							"app":                        appName,
+							"app":                        app,
 							"giantswarm.io/service-type": "managed",
 						},
 					},
