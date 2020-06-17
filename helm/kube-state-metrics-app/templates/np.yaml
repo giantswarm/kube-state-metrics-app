@@ -10,6 +10,9 @@ spec:
   podSelector:
     matchLabels:
       app: {{ .Values.name }}
+  policyTypes:
+    - Ingress
+    - Egress
   ingress:
   - ports:
     - port: {{ .Values.port }}
@@ -23,7 +26,3 @@ spec:
     - ipBlock:
         cidr: {{ $privateSubnet }}
     {{ end -}}
-  policyTypes:
-  - Ingress
-  - Egress
-
