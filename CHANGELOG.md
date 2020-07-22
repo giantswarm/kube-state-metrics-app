@@ -7,8 +7,13 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
-### Updated
+### Added
 
+- Added workflows for automatic releases.
+
+### Changed
+
+- Updated architect-orb to 0.10.0.
 - Update kube-state-metrics version to 1.9.7.
 
 ## [1.1.0] - 2020-06-17
