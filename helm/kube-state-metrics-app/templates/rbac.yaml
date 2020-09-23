@@ -1,22 +1,22 @@
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ include "resource.default.name" }}
+  name: {{ include "resource.default.name" . }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
 subjects:
 - kind: ServiceAccount
-  name: {{ include "resource.default.name" }}
-  namespace: {{ include "resource.default.namespace" }}
+  name: {{ include "resource.default.name" . }}
+  namespace: {{ include "resource.default.namespace" . }}
 roleRef:
   kind: ClusterRole
-  name: {{ include "resource.default.name" }}
+  name: {{ include "resource.default.name" . }}
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ include "resource.default.name" }}
+  name: {{ include "resource.default.name" . }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
 rules:
@@ -96,7 +96,7 @@ rules:
   verbs:
   - use
   resourceNames:
-  - {{ include "resource.psp.name" }}
+  - {{ include "resource.psp.name" . }}
 - apiGroups:
   - autoscaling
   attributeRestrictions: null
@@ -133,24 +133,24 @@ apiVersion: rbac.authorization.k8s.io/v1
 # kubernetes versions before 1.8.0 should use rbac.authorization.k8s.io/v1beta1
 kind: RoleBinding
 metadata:
-  name: {{ include "resource.default.name" }}
-  namespace: {{ include "resource.default.namespace" }}
+  name: {{ include "resource.default.name" . }}
+  namespace: {{ include "resource.default.namespace" . }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{ include "resource.default.name" }}-resizer
+  name: {{ include "resource.default.name" . }}-resizer
 subjects:
 - kind: ServiceAccount
-  name: {{ include "resource.default.name" }}
-  namespace: {{ include "resource.default.namespace" }}
+  name: {{ include "resource.default.name" . }}
+  namespace: {{ include "resource.default.namespace" . }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: {{ include "resource.default.namespace" }}
-  name:  {{ include "resource.default.name" }}-resizer
+  namespace: {{ include "resource.default.namespace" . }}
+  name:  {{ include "resource.default.name" . }}-resizer
   labels:
     {{- include "labels.common" . | nindent 4 }}
 rules:
