@@ -151,6 +151,7 @@ func init() {
 							"helm.sh/chart":                chartID,
 						},
 						MatchLabels: map[string]string{
+							"app":                        app,
 							"app.kubernetes.io/name":     app,
 							"app.kubernetes.io/instance": appName,
 						},
