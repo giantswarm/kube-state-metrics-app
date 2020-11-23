@@ -31,6 +31,7 @@ helm.sh/chart: {{ include "chart" . | quote }}
 Selector labels
 */}}
 {{- define "labels.selector" -}}
+app: {{ .Values.name | quote }}
 app.kubernetes.io/name: {{ include "name" . | quote }}
 app.kubernetes.io/instance: {{ .Release.Name | quote }}
 {{- end -}}
