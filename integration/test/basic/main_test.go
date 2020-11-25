@@ -129,7 +129,7 @@ func init() {
 
 			App: basicapp.Chart{
 				ChartValues:     templates.KubeStateMetricsValues,
-				Name:            fmt.Sprintf("%s-%s", appName, appVersion),
+				Name:            strings.ReplaceAll(fmt.Sprintf("%s-%s", appName, appVersion), ".", "-"),
 				Namespace:       metav1.NamespaceSystem,
 				RunReleaseTests: true,
 				URL:             tarballURL,
@@ -137,7 +137,7 @@ func init() {
 			ChartResources: basicapp.ChartResources{
 				Deployments: []basicapp.Deployment{
 					{
-						Name:      fmt.Sprintf("%s-%s", appName, appVersion),
+						Name:      strings.ReplaceAll(fmt.Sprintf("%s-%s", appName, appVersion), ".", "-"),
 						Namespace: metav1.NamespaceSystem,
 						DeploymentLabels: map[string]string{
 							"app":                          app,
