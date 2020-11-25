@@ -129,7 +129,7 @@ func init() {
 
 			App: basicapp.Chart{
 				ChartValues:     templates.KubeStateMetricsValues,
-				Name:            appName,
+				Name:            fmt.Sprintf("%s-%s", appName, appVersion),
 				Namespace:       metav1.NamespaceSystem,
 				RunReleaseTests: true,
 				URL:             tarballURL,
