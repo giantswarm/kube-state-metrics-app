@@ -137,7 +137,7 @@ func init() {
 			ChartResources: basicapp.ChartResources{
 				Deployments: []basicapp.Deployment{
 					{
-						Name:      strings.ReplaceAll(fmt.Sprintf("%s-%s", app, appVersion), ".", "-"),
+						Name:      strings.ReplaceAll(fmt.Sprintf("%s-%s", appName, appVersion), ".", "-"),
 						Namespace: metav1.NamespaceSystem,
 						DeploymentLabels: map[string]string{
 							"app":                          app,
