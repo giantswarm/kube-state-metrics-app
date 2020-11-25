@@ -16,7 +16,7 @@ room for such suffix.
 {{- end -}}
 
 {{- define "resource.deployment.name" -}}
-{{- printf "%s-%s" .Release.Name .Release.Version | replace "." "-" | trunc 47 | trimSuffix "-" -}}
+{{- printf "%s-%s" .Release.Name .Chart.Version | replace "." "-" | trunc 47 | trimSuffix "-" -}}
 {{- end -}}
 
 {{- define "resource.psp.name" -}}
