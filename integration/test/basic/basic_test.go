@@ -4,6 +4,7 @@ package basic
 
 import (
 	"context"
+	"fmt"
 	"testing"
 	"time"
 
@@ -31,6 +32,12 @@ func checkReadyDeployment(ctx context.Context) error {
 	l.LogCtx(ctx, "level", "debug", "message", "waiting for ready deployment")
 
 	o := func() error {
+		// DEBUG
+		list, err := appTest.K8sClient().AppsV1().Deployments(metav1.NamespaceSystem).List(ctx, metav1.ListOptions{})
+		for _, i := range list.Items {
+			fmt.Println(i.Name)
+		}
+
 		deploy, err := appTest.K8sClient().AppsV1().Deployments(metav1.NamespaceSystem).Get(ctx, appName, metav1.GetOptions{})
 		if apierrors.IsNotFound(err) {
 			return microerror.Maskf(executionFailedError, "deployment %#q in %#q not found", appName, metav1.NamespaceSystem)
