@@ -16,7 +16,6 @@ import (
 )
 
 const (
-	app         = "kube-state-metrics"
 	appName     = "kube-state-metrics-app"
 	catalogName = "default-test"
 )
