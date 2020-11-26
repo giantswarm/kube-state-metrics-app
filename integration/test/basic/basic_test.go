@@ -10,7 +10,6 @@ import (
 
 	"github.com/giantswarm/backoff"
 	"github.com/giantswarm/microerror"
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -32,21 +31,22 @@ func checkReadyDeployment(ctx context.Context) error {
 	l.LogCtx(ctx, "level", "debug", "message", "waiting for ready deployment")
 
 	o := func() error {
-		// DEBUG
-		list, err := appTest.K8sClient().AppsV1().Deployments(metav1.NamespaceSystem).List(ctx, metav1.ListOptions{})
-		for _, i := range list.Items {
-			fmt.Println(i.Name)
+		selector := fmt.Sprintf("%s=%s", "app.kubernetes.io/name", app)
+		lo := metav1.ListOptions{
+			LabelSelector: selector,
 		}
 
-		deploy, err := appTest.K8sClient().AppsV1().Deployments(metav1.NamespaceSystem).Get(ctx, appName, metav1.GetOptions{})
-		if apierrors.IsNotFound(err) {
-			return microerror.Maskf(executionFailedError, "deployment %#q in %#q not found", appName, metav1.NamespaceSystem)
-		} else if err != nil {
+		deploys, err := appTest.K8sClient().AppsV1().Deployments(metav1.NamespaceSystem).List(ctx, lo)
+		if err != nil {
 			return microerror.Mask(err)
+		} else if len(deploys.Items) == 0 {
+			return microerror.Maskf(executionFailedError, "deployment with label%#q in %#q not found", app, metav1.NamespaceSystem)
 		}
+
+		deploy := deploys.Items[0]
 
 		if deploy.Status.ReadyReplicas != *deploy.Spec.Replicas {
-			return microerror.Maskf(executionFailedError, "deployment %#q want %d replicas %d ready", appName, *deploy.Spec.Replicas, deploy.Status.ReadyReplicas)
+			return microerror.Maskf(executionFailedError, "deployment %#q want %d replicas %d ready", deploy.Name, *deploy.Spec.Replicas, deploy.Status.ReadyReplicas)
 		}
 
 		return nil
