@@ -13,15 +13,19 @@ serviceType: managed
 
 replicas: 1
 
+isManagementCluster: false
 e2e: false
 
 image:
-  registry: docker.io
   name: giantswarm/kube-state-metrics
   # when updating tag make sure to also keep appVersion in Chart.yaml in sync
   tag: v1.9.7
 
 test:
   image:
+    registry: docker.io
     name: giantswarm/alpine-testing
     tag: 0.1.0
+
+registry:
+  domain: docker.io
