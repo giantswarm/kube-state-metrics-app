@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Update `architect-orb` to v4.8.0 to stop pushing to app collection helm chart.
+
 ## [1.4.0] - 2021-08-10
 
 ### Changed
