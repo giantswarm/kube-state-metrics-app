@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.5.0] - 2021-11-29
+
 ### Changed
 
 - Update `architect-orb` to v4.8.0 to stop pushing to app collection helm chart.
@@ -157,7 +159,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.2.1...v1.3.0
