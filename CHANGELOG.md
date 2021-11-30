@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix permission to list and watch `leases.coordination.k8s.io`.
+
 ## [1.5.0] - 2021-11-29
 
 ### Changed
