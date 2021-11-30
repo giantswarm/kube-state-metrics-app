@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.5.1] - 2021-11-30
+
 ### Fixed
 
 - Fix permission to list and watch `leases.coordination.k8s.io`.
@@ -163,7 +165,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.0...v1.3.1
