@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed missing labels from kube_<resource-name>_labels
+
 ## [1.6.0] - 2022-01-04
 
 ### Changed
