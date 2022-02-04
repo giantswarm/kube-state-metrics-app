@@ -27,7 +27,7 @@ spec:
         {{- end }}
         args:
         - '--port={{ .Values.port }}'
-        - '--metric-labels-allowlist=daemonsets=[giantswarm.io/monitoring_basic_sli],deployments[giantswarm.io/monitoring_basic_sli,giantswarm.io/service_type],nodes=[ip],statefulsets=[giantswarm.io/monitoring_basic_sli]'
+        - '--metric-labels-allowlist=daemonsets=[giantswarm.io/monitoring_basic_sli],deployments=[giantswarm.io/monitoring_basic_sli,giantswarm.io/service_type],nodes=[ip],statefulsets=[giantswarm.io/monitoring_basic_sli]'
         livenessProbe:
           httpGet:
             path: /healthz
