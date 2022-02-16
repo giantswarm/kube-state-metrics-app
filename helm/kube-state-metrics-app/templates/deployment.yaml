@@ -17,7 +17,7 @@ spec:
       labels:
         {{- include "labels.common" . | nindent 8 }}
     spec:
-      priorityClassName: giantswarm-critical
+      priorityClassName: system-cluster-critical
       containers:
       - name: {{ include "resource.default.name" . }}
         {{- if .Values.isManagementCluster }}

@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Raise priorityClass to `system-cluster-critical` to increase scheduling chances in master-only clusters.
+
 ## [1.6.1] - 2022-02-04
 
 ### Fixed
