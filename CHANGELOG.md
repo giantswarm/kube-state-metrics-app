@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.7.0] - 2022-02-16
+
 ### Changed
 
 - Raise priorityClass to `system-cluster-critical` to increase scheduling chances in master-only clusters.
@@ -181,7 +183,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v1.6.1...HEAD
+[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/giantswarm/giantswarm/compare/v1.6.1...v1.7.0
 [1.6.1]: https://github.com/giantswarm/giantswarm/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.1...v1.6.0
 [1.5.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.0...v1.5.1
