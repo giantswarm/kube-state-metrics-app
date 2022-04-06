@@ -29,3 +29,19 @@ test:
 
 registry:
   domain: docker.io
+
+metricLabelsAllowlist:
+  daemonsets:
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/service-type
+  - app.kubernetes.io/name
+  deployments:
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/service-type
+  - app.kubernetes.io/name
+  nodes:
+  - ip
+  statefulsets:
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/service-type
+  - app.kubernetes.io/name

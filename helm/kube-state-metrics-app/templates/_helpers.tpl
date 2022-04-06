@@ -34,3 +34,13 @@ Selector labels
 app.kubernetes.io/name: {{ include "name" . | quote }}
 app.kubernetes.io/instance: {{ .Release.Name | quote }}
 {{- end -}}
+
+{{/*
+Metric labels allowlist helper
+*/}}
+{{- define "kube-state-metrics.metric-labels-allowlist" -}}
+{{- range $i, $resource := sortAlpha (keys .Values.metricLabelsAllowlist) -}}
+{{- if $i -}},{{- end -}}
+{{ $resource }}=[{{- range $j, $label := sortAlpha (get $.Values.metricLabelsAllowlist $resource) -}}{{- if $j -}},{{- end -}}{{- $label -}}{{- end -}}]
+{{- end -}}
+{{- end -}}
