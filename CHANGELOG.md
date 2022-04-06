@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Make `--metric-labels-allowlist` configurable through user values.
+
 ## [1.8.0] - 2022-04-06
 
 ### Changed
