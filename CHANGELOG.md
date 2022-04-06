@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.9.0] - 2022-04-06
+
 ### Changed
 
 - Make `--metric-labels-allowlist` configurable through user values.
@@ -193,7 +195,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.6.1...v1.7.0
 [1.6.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.6.0...v1.6.1
