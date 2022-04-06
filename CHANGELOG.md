@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Allow `giantswarm.io/service-type` labels from kube_<resource-name>_labels (Deployment, DaemonSet, StatefulSet)
+
 ## [1.7.0] - 2022-02-16
 
 ### Changed
