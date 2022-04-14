@@ -10,7 +10,6 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ### Changed
 
 - Add `Node Pool` labels to the default allowed labels in `--metric-labels-allowlist`.
-- Add `kubernetes.io/role` label to the default allowed labels in `--metric-labels-allowlist`.
 
 ## [1.9.0] - 2022-04-06
 
