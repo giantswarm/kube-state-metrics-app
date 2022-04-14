@@ -41,6 +41,8 @@ metricLabelsAllowlist:
   - app.kubernetes.io/name
   nodes:
   - ip
+  - giantswarm.io/machine-pool
+  - giantswarm.io/machine-deployment
   statefulsets:
   - giantswarm.io/monitoring_basic_sli
   - giantswarm.io/service-type
