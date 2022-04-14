@@ -43,6 +43,7 @@ metricLabelsAllowlist:
   - ip
   - giantswarm.io/machine-pool
   - giantswarm.io/machine-deployment
+  - kubernetes.io/role
   statefulsets:
   - giantswarm.io/monitoring_basic_sli
   - giantswarm.io/service-type
