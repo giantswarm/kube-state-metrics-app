@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Allow all `giantswarm.io/*` labels.
+
 ## [1.10.0] - 2022-04-19
 
 ### Changed
