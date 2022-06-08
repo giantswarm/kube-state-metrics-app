@@ -7,9 +7,9 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
-### Changed
+### Add
 
-- Allow all `giantswarm.io/*` labels.
+- Allow `giantswarm.io/monitoring_team` label.
 
 ## [1.10.0] - 2022-04-19
 

@@ -32,14 +32,21 @@ registry:
 
 metricLabelsAllowlist:
   daemonsets:
-  - giantswarm.io/*
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/monitoring_team
+  - giantswarm.io/service-type
   - app.kubernetes.io/name
   deployments:
-  - giantswarm.io/*
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/monitoring_team
+  - giantswarm.io/service-type
   - app.kubernetes.io/name
   nodes:
-  - giantswarm.io/*
   - ip
+  - giantswarm.io/machine-pool
+  - giantswarm.io/machine-deployment
   statefulsets:
-  - giantswarm.io/*
+  - giantswarm.io/monitoring_basic_sli
+  - giantswarm.io/monitoring_team
+  - giantswarm.io/service-type
   - app.kubernetes.io/name
