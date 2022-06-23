@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: v1.9.7
-description: A Helm chart for the Kubernetes kube-state-metrics service
-home: https://github.com/giantswarm/kube-state-metrics-app
-name: kube-state-metrics-app
-version: [[ .Version ]]
