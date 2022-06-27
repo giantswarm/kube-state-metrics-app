@@ -35,10 +35,12 @@ metricLabelsAllowlist:
   - giantswarm.io/monitoring_basic_sli
   - giantswarm.io/service-type
   - app.kubernetes.io/name
+  - application.giantswarm.io/team
   deployments:
   - giantswarm.io/monitoring_basic_sli
   - giantswarm.io/service-type
   - app.kubernetes.io/name
+  - application.giantswarm.io/team
   nodes:
   - ip
   - giantswarm.io/machine-pool
@@ -47,3 +49,4 @@ metricLabelsAllowlist:
   - giantswarm.io/monitoring_basic_sli
   - giantswarm.io/service-type
   - app.kubernetes.io/name
+  - application.giantswarm.io/team
