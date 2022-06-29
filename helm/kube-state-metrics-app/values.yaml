@@ -11,6 +11,9 @@ image:
 imagePullSecrets: []
 # - name: "image-pull-secret"
 
+registry:
+  domain: docker.io
+
 # If set to true, this will deploy kube-state-metrics as a StatefulSet and the data
 # will be automatically sharded across <.Values.replicas> pods using the built-in
 # autodiscovery feature: https://github.com/kubernetes/kube-state-metrics#automated-sharding
@@ -154,7 +157,7 @@ metricLabelsAllowlist:
   - daemonsets=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
   - deployments=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
   - nodes=[ip, giantswarm.io/machine-pool, giantswarm.io/machine-deployment]
-  -statefulsets=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
+  - statefulsets=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
 
 # Comma-separated list of Kubernetes annotations keys that will be used in the resource'
 # labels metric. By default the metric contains only name and namespace labels.
