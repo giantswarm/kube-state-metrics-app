@@ -3,12 +3,12 @@ module github.com/giantswarm/kube-state-metrics-app
 go 1.14
 
 require (
-	github.com/giantswarm/apiextensions/v2 v2.0.1 // indirect
-	github.com/giantswarm/appcatalog v0.1.11
-	github.com/giantswarm/e2esetup/v2 v2.0.0
-	github.com/giantswarm/e2etests/v2 v2.0.0
-	github.com/giantswarm/helmclient/v2 v2.0.0
-	github.com/giantswarm/k8sclient/v4 v4.0.0
-	github.com/giantswarm/micrologger v0.3.1
-	k8s.io/apimachinery v0.18.5
+	github.com/giantswarm/apptest v1.2.0
+	github.com/giantswarm/backoff v1.0.0
+	github.com/giantswarm/microerror v0.4.0
+	github.com/giantswarm/micrologger v0.6.0
+	k8s.io/apimachinery v0.21.4
+	sigs.k8s.io/controller-runtime v0.9.7 // indirect
 )
+
+replace github.com/coreos/etcd v3.3.10+incompatible => github.com/coreos/etcd v3.3.25+incompatible

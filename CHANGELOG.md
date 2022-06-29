@@ -7,6 +7,82 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.11.0] - 2022-06-27
+
+### Add
+
+- Allow `application.giantswarm.io/team` label.
+
+## [1.10.0] - 2022-04-19
+
+### Changed
+
+- Add `Node Pool` labels to the default allowed labels in `--metric-labels-allowlist`.
+
+## [1.9.0] - 2022-04-06
+
+### Changed
+
+- Make `--metric-labels-allowlist` configurable through user values.
+
+## [1.8.0] - 2022-04-06
+
+### Changed
+
+- Allow `giantswarm.io/service-type` labels from kube_<resource-name>_labels (Deployment, DaemonSet, StatefulSet)
+
+## [1.7.0] - 2022-02-16
+
+### Changed
+
+- Raise priorityClass to `system-cluster-critical` to increase scheduling chances in master-only clusters.
+
+## [1.6.1] - 2022-02-04
+
+### Fixed
+
+- Fixed missing labels from kube_<resource-name>_labels
+
+## [1.6.0] - 2022-01-04
+
+### Changed
+
+- Bumped to upstream version v2.3.0.
+
+## [1.5.1] - 2021-11-30
+
+### Fixed
+
+- Fix permission to list and watch `leases.coordination.k8s.io`.
+
+## [1.5.0] - 2021-11-29
+
+### Changed
+
+- Update `architect-orb` to v4.8.0 to stop pushing to app collection helm chart.
+- Bumped to upstream version v2.2.4.
+
+## [1.4.0] - 2021-08-10
+
+### Changed
+
+- Migrate to configuration management.
+- Update `architect-orb` to v4.0.0.
+
+## [1.3.1] - 2021-03-26
+
+### Changed
+
+- Set docker.io as the default registry
+
+## [1.3.0] - 2020-11-25
+
+### Changed
+
+- Change the Kubernetes Deployment name to include the app version.
+
+## [1.2.1] - 2020-10-29
+
 ### Fixed
 
 - Support deployment of `kube-state-metrics-app` on chinese installations.
@@ -131,7 +207,20 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.11.0...HEAD
+[1.11.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.10.0...v1.11.0
+[1.10.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.9.0...v1.10.0
+[1.9.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.8.0...v1.9.0
+[1.8.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.7.0...v1.8.0
+[1.7.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.6.1...v1.7.0
+[1.6.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.6.0...v1.6.1
+[1.6.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.1...v1.6.0
+[1.5.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.1...v1.4.0
+[1.3.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.3.0...v1.3.1
+[1.3.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.0.5...v1.1.0
