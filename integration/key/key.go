@@ -1,13 +1,10 @@
+//go:build k8srequired
 // +build k8srequired
 
 package key
 
 func AppName() string {
 	return "kube-state-metrics"
-}
-
-func CRName() string {
-	return "kube-state-metrics-app"
 }
 
 func DefaultCatalogName() string {
