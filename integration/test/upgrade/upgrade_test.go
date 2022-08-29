@@ -1,3 +1,4 @@
+//go:build k8srequired
 // +build k8srequired
 
 package upgrade
@@ -34,14 +35,14 @@ func TestUpgrade(t *testing.T) {
 
 	currentApp := apptest.App{
 		CatalogName:   key.DefaultCatalogName(),
-		Name:          key.CRName(),
+		Name:          key.AppName(),
 		Namespace:     key.Namespace(),
 		WaitForDeploy: true,
 	}
 
 	desiredApp := apptest.App{
 		CatalogName:   key.DefaultTestCatalogName(),
-		Name:          key.CRName(),
+		Name:          key.AppName(),
 		Namespace:     key.Namespace(),
 		SHA:           env.CircleSHA(),
 		WaitForDeploy: true,
