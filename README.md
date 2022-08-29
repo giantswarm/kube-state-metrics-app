@@ -19,7 +19,7 @@ To install the chart locally:
 ```bash
 $ git clone https://github.com/giantswarm/kube-state-metrics-app.git
 $ cd kube-state-metrics-app
-$ helm install helm/kube-state-metrics-app
+$ helm install helm/kube-state-metrics
 ```
 
 Provide a custom `values.yaml`:

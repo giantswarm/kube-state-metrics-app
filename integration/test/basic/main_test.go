@@ -1,3 +1,4 @@
+//go:build k8srequired
 // +build k8srequired
 
 package basic
@@ -42,7 +43,7 @@ func TestMain(m *testing.M) {
 		apps := []apptest.App{
 			{
 				CatalogName:   key.DefaultTestCatalogName(),
-				Name:          key.CRName(),
+				Name:          key.AppName(),
 				Namespace:     metav1.NamespaceSystem,
 				SHA:           env.CircleSHA(),
 				WaitForDeploy: true,

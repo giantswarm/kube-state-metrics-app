@@ -10,7 +10,7 @@ workflows:
           name: push-to-default-app-catalog
           app_catalog: "default-catalog"
           app_catalog_test: "default-test-catalog"
-          chart: "kube-state-metrics-app"
+          chart: "kube-state-metrics"
           filters:
             # Trigger the job also on git tag.
             tags:
@@ -43,22 +43,22 @@ workflows:
 
       - architect/push-to-app-catalog:
           context: architect
-          name: push-kube-state-metrics-to-control-plane-app-catalog
+          name: push-to-control-plane-app-catalog
           app_catalog: "control-plane-catalog"
           app_catalog_test: "control-plane-test-catalog"
-          chart: "kube-state-metrics-app"
+          chart: "kube-state-metrics"
           filters:
             tags:
               only: /^v.*/
 
       - architect/push-to-app-collection:
           context: architect
-          name: push-kube-state-metrics-to-shared-app-collection
-          app_name: "kube-state-metrics-app"
+          name: push-to-shared-app-collection
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "shared-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
@@ -67,12 +67,12 @@ workflows:
 
       - architect/push-to-app-collection:
           context: architect
-          name: push-kube-state-metrics-to-aws-app-collection
-          app_name: "kube-state-metrics-app"
+          name: push-to-aws-app-collection
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "aws-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
@@ -81,12 +81,12 @@ workflows:
 
       - architect/push-to-app-collection:
           context: architect
-          name: push-kube-state-metrics-to-azure-app-collection
-          app_name: "kube-state-metrics-app"
+          name: push-to-azure-app-collection
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "azure-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
@@ -95,12 +95,12 @@ workflows:
 
       - architect/push-to-app-collection:
           context: architect
-          name: push-kube-state-metrics-to-vsphere-app-collection
-          app_name: "kube-state-metrics-app"
+          name: push-to-vsphere-app-collection
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "vsphere-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
@@ -110,11 +110,11 @@ workflows:
       - architect/push-to-app-collection:
           context: architect
           name: push-to-cloud-director-app-collection
-          app_name: "kube-state-metrics-app"
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "cloud-director-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
@@ -124,11 +124,39 @@ workflows:
       - architect/push-to-app-collection:
           context: architect
           name: push-to-capa-app-collection
-          app_name: "kube-state-metrics-app"
+          app_name: "kube-state-metrics"
           app_namespace: "monitoring"
           app_collection_repo: "capa-app-collection"
           requires:
-            - push-kube-state-metrics-to-control-plane-app-catalog
+            - push-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-to-gcp-app-collection
+          app_name: "kube-state-metrics"
+          app_namespace: "monitoring"
+          app_collection_repo: "gcp-app-collection"
+          requires:
+            - push-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-to-openstack-app-collection
+          app_name: "kube-state-metrics"
+          app_namespace: "monitoring"
+          app_collection_repo: "openstack-app-collection"
+          requires:
+            - push-to-control-plane-app-catalog
           filters:
             branches:
               ignore: /.*/
