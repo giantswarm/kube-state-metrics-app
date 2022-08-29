@@ -9,7 +9,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 
-- Use upstream chart with our defaults
+- Use upstream chart to 4.16.0 with our defaults
 - Upgrade kube-state-metrics from 2.3.0 to 2.5.0
 
 ## [1.11.0] - 2022-06-27
