@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed 
+
+- Rename from `kube-state-metrics-app` to `kube-state-metrics`
+
 ## [1.12.0] - 2022-08-29
 
 ### Changed
