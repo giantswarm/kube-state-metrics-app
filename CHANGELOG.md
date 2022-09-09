@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Add
+
+- Allow `topology.kubernetes.io/region` & `topology.kubernetes.io/zone` labels.
+
 ## [1.12.1] - 2022-08-29
 
 ### Changed 
