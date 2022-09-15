@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade kube-state-metrics to 2.6.0
+
 ## [1.13.0] - 2022-09-09
 
 ### Add
