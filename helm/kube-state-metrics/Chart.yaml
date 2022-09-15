@@ -8,7 +8,7 @@ keywords:
 - kubernetes
 type: application
 version: [[ .Version ]]
-appVersion: 2.5.0
+appVersion: 2.6.0
 home: https://github.com/giantswarm/kube-state-metrics-app
 sources:
 - https://github.com/kubernetes/kube-state-metrics/
