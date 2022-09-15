@@ -7,9 +7,9 @@ keywords:
 - prometheus
 - kubernetes
 type: application
-version: 4.18.0
+version: [[ .Version ]]
 appVersion: 2.6.0
-home: https://github.com/kubernetes/kube-state-metrics/
+home: https://github.com/giantswarm/kube-state-metrics-app
 sources:
 - https://github.com/kubernetes/kube-state-metrics/
 maintainers:
@@ -19,3 +19,5 @@ maintainers:
   email: manuel@rueg.eu
 - name: dotdc
   email: davidcalvertfr@gmail.com
+annotations:
+  config.giantswarm.io/version: 1.x.x

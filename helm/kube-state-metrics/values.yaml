@@ -93,7 +93,7 @@ prometheus:
 ## Ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
 ##
 podSecurityPolicy:
-  enabled: false
+  enabled: true
   annotations: {}
     ## Specify pod annotations
     ## Ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/#apparmor
@@ -137,10 +137,11 @@ topologySpreadConstraints: []
 annotations: {}
 
 # Annotations to be added to the pod
-podAnnotations: {}
+podAnnotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
 
 ## Assign a PriorityClassName to pods if set
-# priorityClassName: ""
+priorityClassName: "system-cluster-critical"
 
 # Ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
 podDisruptionBudget: {}
@@ -161,8 +162,12 @@ metricDenylist: []
 # label keys you would like to allow for them (Example: '=namespaces=[k8s-label-1,k8s-label-n,...],pods=[app],...)'.
 # A single '*' can be provided per resource instead to allow any labels, but that has
 # severe performance implications (Example: '=pods=[*]').
-metricLabelsAllowlist: []
-  # - namespaces=[k8s-label-1,k8s-label-n]
+metricLabelsAllowlist:
+# - namespaces=[k8s-label-1,k8s-label-n]
+  - daemonsets=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
+  - deployments=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
+  - nodes=[ip, giantswarm.io/machine-pool, giantswarm.io/machine-deployment, topology.kubernetes.io/region, topology.kubernetes.io/zone]
+  - statefulsets=[giantswarm.io/monitoring_basic_sli, giantswarm.io/service-type, app.kubernetes.io/name, application.giantswarm.io/team]
 
 # Comma-separated list of Kubernetes annotations keys that will be used in the resource'
 # labels metric. By default the metric contains only name and namespace labels.
@@ -226,7 +231,10 @@ namespacesDenylist: ""
 ##
 namespaceOverride: ""
 
-resources: {}
+resources:
+  requests:
+    cpu: 500m
+    memory: 500Mi
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
