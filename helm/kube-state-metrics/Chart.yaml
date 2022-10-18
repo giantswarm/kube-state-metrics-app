@@ -10,6 +10,7 @@ type: application
 version: [[ .Version ]]
 appVersion: 2.6.0
 home: https://github.com/giantswarm/kube-state-metrics-app
+icon: https://s.giantswarm.io/app-icons/k8s-initiator/1/dark.svg
 sources:
 - https://github.com/kubernetes/kube-state-metrics/
 maintainers:
