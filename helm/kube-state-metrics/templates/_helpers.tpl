@@ -72,6 +72,7 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 release: {{ .Release.Name }}
 {{- end }}
 "giantswarm.io/service-type": "managed"
+application.giantswarm.io/team: {{ index .Chart.Annotations "application.giantswarm.io/team" | quote }}
 {{- end }}
 
 {{/*
