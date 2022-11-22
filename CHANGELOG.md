@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Set Helm chart ownership to team atlas.
+
 ## [1.14.0] - 2022-09-15
 
 ### Changed
