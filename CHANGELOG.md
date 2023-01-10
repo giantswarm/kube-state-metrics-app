@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Re add to Azure collections.
+
 ## [1.14.1] - 2022-11-22
 
 ### Changed
