@@ -7,6 +7,7 @@ require (
 	github.com/giantswarm/backoff v1.0.0
 	github.com/giantswarm/microerror v0.4.0
 	github.com/giantswarm/micrologger v1.0.0
+	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
 	k8s.io/apimachinery v0.26.2
 	sigs.k8s.io/controller-runtime v0.12.3 // indirect
 )
