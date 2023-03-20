@@ -272,3 +272,6 @@ volumes: []
 #  - configMap:
 #      name: cm-for-volume
 #    name: config-volume
+
+ciliumNetworkPolicy:
+  enabled: false
