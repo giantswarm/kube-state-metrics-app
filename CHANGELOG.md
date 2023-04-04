@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.15.0] - 2023-04-04
+
 ### Added
 
 - Add cilium network policies.
@@ -248,7 +250,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 - Tuned the addon resizer for bigger clusters.
 
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.14.2...HEAD
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.15.0...HEAD
+[1.15.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.14.2...v1.15.0
 [1.14.2]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.14.1...v1.14.2
 [1.14.1]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/giantswarm/kube-state-metrics-app/compare/v1.13.0...v1.14.0
