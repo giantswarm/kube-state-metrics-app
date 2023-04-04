@@ -1,0 +1,306 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "affinity": {
+            "type": "object"
+        },
+        "annotations": {
+            "type": "object"
+        },
+        "autosharding": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "ciliumNetworkPolicy": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "collectors": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "containerSecurityContext": {
+            "type": "object"
+        },
+        "customLabels": {
+            "type": "object"
+        },
+        "extraArgs": {
+            "type": "array"
+        },
+        "hostNetwork": {
+            "type": "boolean"
+        },
+        "image": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "pullPolicy": {
+                    "type": "string"
+                },
+                "registry": {
+                    "type": "string"
+                },
+                "sha": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                }
+            }
+        },
+        "imagePullSecrets": {
+            "type": "array"
+        },
+        "kubeTargetVersionOverride": {
+            "type": "string"
+        },
+        "kubeconfig": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "secret": {
+                    "type": "null"
+                }
+            }
+        },
+        "metricAllowlist": {
+            "type": "array"
+        },
+        "metricAnnotationsAllowList": {
+            "type": "array"
+        },
+        "metricDenylist": {
+            "type": "array"
+        },
+        "metricLabelsAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "namespaceOverride": {
+            "type": "string"
+        },
+        "namespaces": {
+            "type": "string"
+        },
+        "namespacesDenylist": {
+            "type": "string"
+        },
+        "nodeSelector": {
+            "type": "object"
+        },
+        "podAnnotations": {
+            "type": "object",
+            "properties": {
+                "cluster-autoscaler.kubernetes.io/safe-to-evict": {
+                    "type": "string"
+                }
+            }
+        },
+        "podDisruptionBudget": {
+            "type": "object"
+        },
+        "podSecurityPolicy": {
+            "type": "object",
+            "properties": {
+                "additionalVolumes": {
+                    "type": "array"
+                },
+                "annotations": {
+                    "type": "object"
+                },
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "priorityClassName": {
+            "type": "string"
+        },
+        "prometheus": {
+            "type": "object",
+            "properties": {
+                "monitor": {
+                    "type": "object",
+                    "properties": {
+                        "additionalLabels": {
+                            "type": "object"
+                        },
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "honorLabels": {
+                            "type": "boolean"
+                        },
+                        "interval": {
+                            "type": "string"
+                        },
+                        "jobLabel": {
+                            "type": "string"
+                        },
+                        "metricRelabelings": {
+                            "type": "array"
+                        },
+                        "namespace": {
+                            "type": "string"
+                        },
+                        "proxyUrl": {
+                            "type": "string"
+                        },
+                        "relabelings": {
+                            "type": "array"
+                        },
+                        "scheme": {
+                            "type": "string"
+                        },
+                        "scrapeTimeout": {
+                            "type": "string"
+                        },
+                        "selectorOverride": {
+                            "type": "object"
+                        },
+                        "tlsConfig": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "prometheusScrape": {
+            "type": "boolean"
+        },
+        "rbac": {
+            "type": "object",
+            "properties": {
+                "create": {
+                    "type": "boolean"
+                },
+                "extraRules": {
+                    "type": "array"
+                },
+                "useClusterRole": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "releaseLabel": {
+            "type": "boolean"
+        },
+        "releaseNamespace": {
+            "type": "boolean"
+        },
+        "replicas": {
+            "type": "integer"
+        },
+        "resources": {
+            "type": "object",
+            "properties": {
+                "requests": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "securityContext": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "fsGroup": {
+                    "type": "integer"
+                },
+                "runAsGroup": {
+                    "type": "integer"
+                },
+                "runAsUser": {
+                    "type": "integer"
+                }
+            }
+        },
+        "selfMonitor": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "service": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "type": "object"
+                },
+                "clusterIP": {
+                    "type": "string"
+                },
+                "loadBalancerIP": {
+                    "type": "string"
+                },
+                "nodePort": {
+                    "type": "integer"
+                },
+                "port": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "serviceAccount": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "type": "object"
+                },
+                "create": {
+                    "type": "boolean"
+                },
+                "imagePullSecrets": {
+                    "type": "array"
+                },
+                "name": {
+                    "type": "null"
+                }
+            }
+        },
+        "tolerations": {
+            "type": "array"
+        },
+        "topologySpreadConstraints": {
+            "type": "array"
+        },
+        "volumeMounts": {
+            "type": "array"
+        },
+        "volumes": {
+            "type": "array"
+        }
+    }
+}
