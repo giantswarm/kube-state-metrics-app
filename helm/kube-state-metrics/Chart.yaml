@@ -1,20 +1,14 @@
 apiVersion: v2
-appVersion: 0.0.1
-
-# Please make sure your name DOES NOT end in "app" or "-app".
+appVersion: 2.15.0
 name: kube-state-metrics
-
-# Please describe what the app provides in a sentence or two.
-description: Please add description
-
+description: Generate and expose cluster-level metrics
 home: https://github.com/giantswarm/kube-state-metrics-app
-
-# If you have an icon/logo, you should add it to https://github.com/giantswarm/web-assets
-# and set the final URL as a value here and uncomment.
-#icon: https://s.giantswarm.io/app-icons/example/1/light.svg
-
 sources:
-- https://github.com/some-org/some-repo
-version: 0.0.0-dev # [[ .Version ]] if you're using architect instead of app-build-suite
+  - https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-state-metrics
+dependencies:
+  - name: kube-state-metrics
+    version: 5.32.0
+    repository: https://prometheus-community.github.io/helm-charts
+version: 0.1.0
 annotations:
-  application.giantswarm.io/team: TEAM-NAME # used through .Chart.Annotations.team (not replaced automatically)
+  application.giantswarm.io/team: atlas #TODO change ownership
