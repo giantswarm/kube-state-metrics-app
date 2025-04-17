@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
 - Initial commit.
 - Renamed app.
+- Configure helm chart and ci.
 
 [Unreleased]: https://github.com/giantswarm/kube-state-metrics/tree/main
