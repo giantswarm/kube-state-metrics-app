@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
+- Initial commit.
+- Renamed app.
 
 [Unreleased]: https://github.com/giantswarm/kube-state-metrics/tree/main
