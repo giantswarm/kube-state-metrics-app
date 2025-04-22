@@ -13,5 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed app.
 - Configure helm chart and ci.
 - Change app ownership to team Tenet.
+- Configure circleci pipeline.
 
 [Unreleased]: https://github.com/giantswarm/kube-state-metrics/tree/main
