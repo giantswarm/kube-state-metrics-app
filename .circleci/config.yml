@@ -2,26 +2,9 @@ version: 2.1
 orbs:
   architect: giantswarm/architect@5.11.6
 
-jobs:
-  template-chart:
-    docker:
-      - image: giantswarm/helm-chart-testing:v3.11.0
-    steps:
-      - checkout
-      - run: |-
-          cd helm/kube-state-metrics
-          helm dep up
-          helm template .
-
 workflows:
   package-and-push-chart-on-tag:
     jobs:
-      - template-chart:
-          name: "template-chart"
-          filters:
-            tags:
-              only: /^v.*/
-
       - architect/push-to-app-catalog:
           context: architect
           executor: app-build-suite
