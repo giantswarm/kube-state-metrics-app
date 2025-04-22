@@ -8,70 +8,50 @@ workflows:
       - architect/push-to-app-catalog:
           context: architect
           executor: app-build-suite
-          name: package-and-push-chart
+          name: giantswarm-app-catalog
           app_catalog: giantswarm-catalog
           app_catalog_test: giantswarm-test-catalog
           chart: 'kube-state-metrics'
           ct_config: ".circleci/ct-config.yml"
-          requires:
-            - "template-chart"
           # Trigger job on git tag.
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore:
+              - main
+              - master
       
-      - architect/push-to-app-collection:
-          context: "architect"
-          name: capa-app-collection
-          app_name: "kube-state-metrics"
-          app_namespace: "kube-system"
-          app_collection_repo: "capa-app-collection"
-          requires:
-            - package-and-push-chart
+      - architect/push-to-app-catalog:
+          name: app-catalog
+          context: architect
+          executor: app-build-suite
+          app_catalog: default-catalog
+          app_catalog_test: default-test-catalog
+          chart: 'kube-state-metrics'
+          ct_config: ".circleci/ct-config.yml"
+            # Trigger job on git tag.
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v.*/
-
-      - architect/push-to-app-collection:
-          context: "architect"
-          name: capz-app-collection
-          app_name: "kube-state-metrics"
-          app_namespace: "kube-system"
-          app_collection_repo: "capz-app-collection"
-          requires:
-            - package-and-push-chart
-          filters:
             branches:
-              ignore: /.*/
+              ignore:
+              - main
+              - master
+      
+      - architect/push-to-app-catalog:
+          name: control-plane-app-catalog
+          context: architect
+          executor: app-build-suite
+          app_catalog: control-plane-catalog
+          app_catalog_test: control-plane-test-catalog
+          chart: 'kube-state-metrics'
+          ct_config: ".circleci/ct-config.yml"
+          filters:
             tags:
               only: /^v.*/
-
-      - architect/push-to-app-collection:
-          context: "architect"
-          name: vsphere-app-collection
-          app_name: "kube-state-metrics"
-          app_namespace: "kube-system"
-          app_collection_repo: "vsphere-app-collection"
-          requires:
-            - package-and-push-chart
-          filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
-
-      - architect/push-to-app-collection:
-          context: "architect"
-          name: cloud-director-app-collection
-          app_name: "kube-state-metrics"
-          app_namespace: "kube-system"
-          app_collection_repo: "cloud-director-app-collection"
-          requires:
-            - package-and-push-chart
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
+              ignore:
+              - main
+              - master
+      
