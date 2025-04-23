@@ -1,5 +1,5 @@
 replace-chart-version-with-git: true
 generate-metadata: true
 chart-dir: ./helm/kube-state-metrics
-ct-config: ./.circleci/ct-config.yaml
+ct-config: ./.circleci/ct.yaml
 destination: ./build
