@@ -1,2 +1,0 @@
-helm/kube-state-metrics/charts/*.tgz
-helm/kube-state-metrics/Chart.lock
