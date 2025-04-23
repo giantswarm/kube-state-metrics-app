@@ -1,5 +1,5 @@
+chart-dir: helm/kube-state-metrics
 replace-chart-version-with-git: true
+ct-config: .abs/ct.yaml
 generate-metadata: true
-chart-dir: ./helm/kube-state-metrics
-ct-config: ./.circleci/ct.yaml
-destination: ./build
+catalog-base-url: https://giantswarm.github.io/default-catalog/
