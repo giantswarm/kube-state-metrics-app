@@ -1,3 +1,2 @@
----
 chart-repos:
 - kube-state-metrics=https://prometheus-community.github.io/helm-charts
