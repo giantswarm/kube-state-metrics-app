@@ -2,7 +2,7 @@
 
 # kube-state-metrics
 
-Giant Swarm offers an kube-state-metrics app which is installed in workload clusters by default.
+Giant Swarm offers a kube-state-metrics app which is installed in workload clusters by default.
 
 Here, we define the kube-state-metrics chart with its templates and default configuration.
 
