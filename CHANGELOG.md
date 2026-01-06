@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add icon to chart.yaml
+
 [Unreleased]: https://github.com/giantswarm/kube-state-metrics/tree/main
