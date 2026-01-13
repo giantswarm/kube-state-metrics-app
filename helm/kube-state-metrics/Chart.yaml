@@ -3,6 +3,7 @@ appVersion: 2.15.0
 name: kube-state-metrics
 description: Generate and expose cluster-level metrics
 home: https://github.com/giantswarm/kube-state-metrics-app
+icon: https://s.giantswarm.io/app-icons/giantswarm/1/dark.svg
 sources:
   - https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-state-metrics
 dependencies:
