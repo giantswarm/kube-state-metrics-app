@@ -89,13 +89,13 @@ kube-state-metrics:
           replacement: kube-state-metrics
         # Add node label.
         - sourceLabels: [__meta_kubernetes_pod_node_name]
-          targetLabel: node]
+          targetLabel: node
 
   ## Specify if a Pod Security Policy for kube-state-metrics must be created
   ## Ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
   ##
   podSecurityPolicy:
-    enabled: true
+    enabled: false
 
   ## Configure network policy for kube-state-metrics
   networkPolicy:
@@ -169,7 +169,7 @@ kube-state-metrics:
     - daemonsets=[application.giantswarm.io/team, app.kubernetes.io/name, app.kubernetes.io/component, app.kubernetes.io/instance, app.kubernetes.io/version, giantswarm.io/service-type, helm.toolkit.fluxcd.io/name, helm.toolkit.fluxcd.io/namespace]
     - deployments=[application.giantswarm.io/team, app.kubernetes.io/name, app.kubernetes.io/component, app.kubernetes.io/instance, app.kubernetes.io/version, giantswarm.io/service-type, helm.toolkit.fluxcd.io/name, helm.toolkit.fluxcd.io/namespace]
     - nodes=[giantswarm.io/machine-pool, giantswarm.io/machine-deployment, ip, node.kubernetes.io/instance-type, topology.kubernetes.io/region, topology.kubernetes.io/zone]
-    - pods=[application.giantswarm.io/team, app.kubernetes.io/name, app.kubernetes.io/component, app.kubernetes.io/instance, giantswarm.io/service-type]
+    - pods=[app.circleci.com/circle-project-reponame, application.giantswarm.io/team, app.kubernetes.io/name, app.kubernetes.io/component, app.kubernetes.io/instance, giantswarm.io/service-type]
     - statefulsets=[application.giantswarm.io/team, app.kubernetes.io/name, app.kubernetes.io/component, app.kubernetes.io/instance, app.kubernetes.io/version, giantswarm.io/service-type, helm.toolkit.fluxcd.io/name, helm.toolkit.fluxcd.io/namespace]
 
   # Available collectors for kube-state-metrics.
@@ -208,13 +208,18 @@ kube-state-metrics:
     # - clusterroles
     # - roles
 
+  ## We set resources so VPA can do its thing
   resources:
     limits:
-      cpu: 200m
+      cpu: 2000m
       memory: 200Mi
     requests:
       cpu: 200m
       memory: 200Mi
+
+  # Scrape the kube-state-metrics own /metrics (telemetry) endpoint
+  selfMonitor:
+    enabled: true
 
   # Enable vertical pod autoscaler support for kube-state-metrics
   verticalPodAutoscaler:

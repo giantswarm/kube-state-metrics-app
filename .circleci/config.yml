@@ -14,6 +14,9 @@ workflows:
           ct_config: .abs/ct.yaml
           app_catalog: default-catalog
           app_catalog_test: default-test-catalog
+          # Keep appVersion pinned to the bundled KSM binary version (Chart.yaml),
+          # do not overwrite it with the chart git tag.
+          override_app_version: false
           filters:
             branches:
               ignore:
