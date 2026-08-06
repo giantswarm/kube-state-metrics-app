@@ -11,7 +11,6 @@ workflows:
           context: architect
           executor: app-build-suite
           chart: kube-state-metrics
-          ct_config: .abs/ct.yaml
           app_catalog: default-catalog
           app_catalog_test: default-test-catalog
           filters:
