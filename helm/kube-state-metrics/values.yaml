@@ -102,33 +102,20 @@ kube-state-metrics:
   ## Configure network policy for kube-state-metrics
   networkPolicy:
     enabled: true
-    # networkPolicy.flavor -- Flavor of the network policy to use.
-    # Can be:
-    # * kubernetes for networking.k8s.io/v1/NetworkPolicy
-    # * cilium     for cilium.io/v2/CiliumNetworkPolicy
-    flavor: kubernetes
+    # Egress by port, like the kube-state-metrics in kube-prometheus-stack-app. Cilium
+    # does not match cluster nodes, where the API server runs, with CIDR rules.
     egress:
-    - to:
-      - ipBlock:
-          cidr: 10.0.0.0/8
-      - ipBlock:
-          cidr: 172.16.0.0/12
-      - ipBlock:
-          cidr: 192.168.0.0/16
-      - ipBlock:
-          cidr: 100.64.0.0/10
+    - ports:
+      - port: 443
+        protocol: TCP
+      - port: 6443
+        protocol: TCP
     ingress:
     - ports:
       - port: 8080
         protocol: TCP
       - port: 8081
         protocol: TCP
-
-    ## Configure the cilium network policy kube-apiserver selector
-    # cilium:
-      # kubeApiServerSelector:
-        # - toEntities:
-        #   - kube-apiserver
 
   securityContext:
     enabled: true
