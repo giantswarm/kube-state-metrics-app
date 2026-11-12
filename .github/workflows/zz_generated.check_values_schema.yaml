@@ -2,7 +2,7 @@
 #
 #    devctl
 #
-#    https://github.com/giantswarm/devctl/blob/0f3e05657376254cac9696cdc1909059b7fe7c9b/pkg/gen/input/workflows/internal/file/check_values_schema.yaml.template
+#    https://github.com/giantswarm/devctl/blob/7141e9a44c23ab8bc9aaf8ef9fdb92c9beed7422/pkg/gen/input/workflows/internal/file/check_values_schema.yaml.template
 #
 
 name: check-values-schema
@@ -12,8 +12,13 @@ on:
     branches:
       - master
       - main
+  merge_group: {}
 
 permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check-values-schema:
