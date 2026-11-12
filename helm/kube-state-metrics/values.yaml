@@ -91,12 +91,6 @@ kube-state-metrics:
         - sourceLabels: [__meta_kubernetes_pod_node_name]
           targetLabel: node
 
-  ## Specify if a Pod Security Policy for kube-state-metrics must be created
-  ## Ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
-  ##
-  podSecurityPolicy:
-    enabled: false
-
   ## Configure network policy for kube-state-metrics
   networkPolicy:
     enabled: true

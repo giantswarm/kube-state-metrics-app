@@ -7,10 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-
-- The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
-
 ### Added
 
 - Add icon to chart.yaml
@@ -18,11 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Align KSM config with `kube-prometheus-stack-app`: raise CPU limit to `2000m` (so VPA can scale up), add `app.circleci.com/circle-project-reponame` to the pods metric label allowlist, and disable `podSecurityPolicy`.
+- Align KSM config with `kube-prometheus-stack-app`: raise CPU limit to `2000m` (so VPA can scale up) and add `app.circleci.com/circle-project-reponame` to the pods metric label allowlist.
+- Remove the `podSecurityPolicy` value. The upstream chart 9.x no longer renders a PodSecurityPolicy.
 
 ### Fixed
 
 - Fix invalid `node]` target label in the ServiceMonitor relabeling config.
+- The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
 - Set `override_app_version: false` in CI so the chart `appVersion` stays pinned to the bundled kube-state-metrics binary version instead of the chart git tag.
+- Set `appVersion` to 2.20.0, the kube-state-metrics version the upstream chart 9.0.1 ships.
 
-[Unreleased]: https://github.com/giantswarm/kube-state-metrics/tree/main
+[Unreleased]: https://github.com/giantswarm/kube-state-metrics-app/tree/main

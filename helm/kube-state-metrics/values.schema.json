@@ -137,14 +137,6 @@
                 "podDisruptionBudget": {
                     "type": "object"
                 },
-                "podSecurityPolicy": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean"
-                        }
-                    }
-                },
                 "prometheus": {
                     "type": "object",
                     "properties": {
